@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 enum ExpenseType {
-    DINNER, BREAKFAST, CAR_RENTAL
+    DINNER, BREAKFAST, CAR_RENTAL,LUNCH
 }
 
 class Expense {
@@ -20,7 +20,7 @@ public class ExpenseReport {
         System.out.println("Expenses " + new Date());
 
         for (Expense expense : expenses) {
-            if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST) {
+            if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST||expense.type==LUNCH) {
                 mealExpenses += expense.amount;
             }
 
@@ -32,12 +32,16 @@ public class ExpenseReport {
             case BREAKFAST:
                 expenseName = "Breakfast";
                 break;
+            expenseName="Lunch
+             case LUNCH;
+                break;
             case CAR_RENTAL:
                 expenseName = "Car Rental";
-                break;
+                 break;
+               
             }
 
-            String mealOverExpensesMarker = expense.type == ExpenseType.DINNER && expense.amount > 5000 || expense.type == ExpenseType.BREAKFAST && expense.amount > 1000 ? "X" : " ";
+            String mealOverExpensesMarker = expense.type == ExpenseType.DINNER && expense.amount > 5000 || expense.type == ExpenseType.BREAKFAST && expense.amount > 1000 ||expense.type==Expence.LUNCH>3000? "X" : " ";
 
             System.out.println(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
 
